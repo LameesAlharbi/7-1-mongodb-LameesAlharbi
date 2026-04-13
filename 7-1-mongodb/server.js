@@ -203,7 +203,6 @@ const studentSchema = new mongoose.Schema({
 
 const Student = mongoose.model("Student", studentSchema);
 
-
 // create document
 
 async function createStudents() {
