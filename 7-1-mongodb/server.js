@@ -190,7 +190,7 @@ import mongoose from "mongoose";
 
 // establish connection
 
-await mongoose.connect("mongodb+srv:LameesAlharbi_db_user:lab123@cluster0.gsasbjf.mongodb.net/TestDB");
+await mongoose.connect("mongodb+srv://LameesAlharbi_db_user:lab123@cluster0.gsasbjf.mongodb.net/TestDB");
 console.log("✅ Connected to MongoDB");
 
 // define schema
