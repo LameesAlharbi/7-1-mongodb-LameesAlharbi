@@ -214,7 +214,6 @@ async function createStudents() {
   console.log("✅ Inserted");
 }
 
-createStudents();
 
 // read document
 
@@ -224,16 +223,6 @@ async function readStudents() {
 }
 
 
-async function runTodo34() {
-  await createStudents();
-  await readStudents();
-}
-
-async function runTodo345() {
-  await createStudents();
-  await readStudents();
-  await updateStudent();
-}
 
 async function runLab() {
   await createStudents();
