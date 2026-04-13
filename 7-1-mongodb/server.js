@@ -217,6 +217,17 @@ createStudents();
 
 // read document
 
+async function readStudents() {
+  const all = await Student.find();
+  console.log(all);
+}
+
+async function runTodo34() {
+  await createStudents();
+  await readStudents();
+}
+
+runTodo34();
 
 // update document
 
