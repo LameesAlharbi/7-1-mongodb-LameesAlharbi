@@ -222,14 +222,21 @@ async function readStudents() {
   console.log(all);
 }
 
-async function runTodo34() {
+async function runTodo345() {
   await createStudents();
   await readStudents();
+  await updateStudent();
 }
 
-runTodo34();
+runTodo345();
+
 
 // update document
+
+async function updateStudent() {
+  await Student.updateOne({ name: "Ali" }, { age: 22 });
+  console.log("✅ Updated Ali");
+}
 
 
 // delete document
