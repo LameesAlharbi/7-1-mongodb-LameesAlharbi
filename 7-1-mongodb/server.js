@@ -206,6 +206,7 @@ const Student = mongoose.model("Student", studentSchema);
 // create document
 
 async function createStudents() {
+  await Student.deleteMany({});
   await Student.insertMany([
     { name: "Ali", age: 21, major: "CS" },
     { name: "Sara", age: 23, major: "SE" }
@@ -222,13 +223,32 @@ async function readStudents() {
   console.log(all);
 }
 
+
+async function runTodo34() {
+  await createStudents();
+  await readStudents();
+}
+
 async function runTodo345() {
   await createStudents();
   await readStudents();
   await updateStudent();
 }
 
-runTodo345();
+async function runLab() {
+  await createStudents();
+  await readStudents();
+  await updateStudent();
+  await deleteStudent();
+
+  const final = await Student.find();
+  console.log("✅ Final students:", final);
+
+  await mongoose.disconnect();
+  console.log("✅ Disconnected");
+}
+
+runLab();
 
 
 // update document
@@ -240,3 +260,8 @@ async function updateStudent() {
 
 
 // delete document
+
+async function deleteStudent() {
+  await Student.deleteOne({ name: "Sara" });
+  console.log("✅ Deleted Sara");
+}
